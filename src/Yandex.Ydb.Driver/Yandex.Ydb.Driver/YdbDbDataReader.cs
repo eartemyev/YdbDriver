@@ -176,7 +176,7 @@ public sealed class YdbDbDataReader : DbDataReader
 
     public override bool IsDBNull(int ordinal)
     {
-        return RowFields[ordinal].NullFlagValue == NullValue.NullValue;
+        return RowFields[ordinal].ValueCase == Value.ValueOneofCase.NullFlagValue;
     }
 
     public override bool NextResult()
